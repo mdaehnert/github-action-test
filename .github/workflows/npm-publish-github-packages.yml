@@ -5,14 +5,14 @@ on:
       - main
 
 jobs:
-  logLatestRelease:
+  getDiscussions:
     runs-on: ubuntu-latest
     steps:
       - uses: octokit/graphql-action@v2.x
         id: get_discussions
         with:
           query: |
-            query getAllDiscussions(owner:$owner,name:$repo) {
+            query getAllDiscussions(owner:String!,$repo:String!) {
               repository(owner:$owner,name:$repo) {
                 discussions() {
                 }
