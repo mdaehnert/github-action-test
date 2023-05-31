@@ -16,7 +16,7 @@ jobs:
               repository(owner:$owner,name:$repo) {
                 discussions {
                   nodes {
-                    name
+                    category
                   }
                 }
               }
