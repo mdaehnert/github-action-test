@@ -15,11 +15,7 @@ jobs:
             query getDiscussions($owner:String!,$repo:String!) {
               repository(owner:$owner,name:$repo) {
                 discussions(first:0) {
-                  nodes {
-                    category {
-                      emoji
-                    }
-                  }
+                  totalCount
                 }
               }
             }
