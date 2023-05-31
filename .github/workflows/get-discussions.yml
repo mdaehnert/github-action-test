@@ -28,12 +28,6 @@ jobs:
       
       - run: "cat foo.json"
       
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: foo.json
-          asset_name: foo
-          tag: tags/v0.0.0
-          overwrite: true
-          body: "This is my release text"
+      - name: Upload file to S3
+        run:  |
+              aws s3 cp ./foo.json s3://2023-05-31-hackathon/foo.json
