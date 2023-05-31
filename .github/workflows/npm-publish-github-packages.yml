@@ -12,10 +12,12 @@ jobs:
         id: get_discussions
         with:
           query: |
-            query repository(owner:$owner,name:$repo) {
+            query getAllDiscussions(owner:$owner,name:$repo) {
+              repository(owner:$owner,name:$repo) {
                 discussions() {
                 }
               }
+            }
           owner: ${{ github.event.repository.owner.name }}
           repo: ${{ github.event.repository.name }}
         env:
