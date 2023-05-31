@@ -28,6 +28,6 @@ jobs:
       
       - run: "cat foo.json"
       
-      - name: Upload file to S3
+      - name: Upload file to S3 
         run:  |
               aws s3 cp ./foo.json s3://2023-05-31-hackathon/foo.json
