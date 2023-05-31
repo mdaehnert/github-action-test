@@ -29,7 +29,9 @@ jobs:
       - run: "cat foo.json"
       
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          - aws-region: eu-central-1
       
       - name: Upload file to S3 
         run:  |
