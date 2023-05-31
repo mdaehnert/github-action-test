@@ -1,4 +1,4 @@
-name: Log latest release
+name: GetDiscussionsAndCache
 on:
   push:
     branches:
@@ -31,7 +31,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          - aws-region: eu-central-1
+          aws-region: eu-central-1
       
       - name: Upload file to S3 
         run:  |
