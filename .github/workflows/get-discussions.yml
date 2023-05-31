@@ -28,6 +28,9 @@ jobs:
       
       - run: "cat foo.json"
       
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+      
       - name: Upload file to S3 
         run:  |
-              aws s3 cp ./foo.json s3://2023-05-31-hackathon/foo.json
+          aws s3 cp ./foo.json s3://2023-05-31-hackathon/foo.json
